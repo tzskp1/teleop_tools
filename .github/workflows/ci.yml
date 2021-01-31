@@ -16,6 +16,7 @@ jobs:
       - uses: ros-tooling/setup-ros@v0.1
         with:
           required-ros-distributions: foxy
+      # workaround
       - run: sudo RTI_NC_LICENSE_ACCEPTED=yes apt-get install -y rti-connext-dds-5.3.1
       - uses: ros-tooling/action-ros-ci@v0.1
         with:
