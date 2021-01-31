@@ -24,12 +24,3 @@ jobs:
             mouse_teleop
             teleop_tools
             teleop_tools_msgs
-      - uses: codecov/codecov-action@v1
-        with:
-          file: ros_ws/lcov/total_coverage.info
-          flags: unittests
-          name: codecov-umbrella
-      - uses: actions/upload-artifact@v1
-        with:
-          name: colcon-logs-${{ matrix.os }}
-          path: ros_ws/log
