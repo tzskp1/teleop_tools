@@ -13,6 +13,7 @@ jobs:
     strategy:
       fail-fast: false
     steps:
+      - uses: actions/checkout@v2
       - uses: ros-tooling/setup-ros@v0.1
         with:
           required-ros-distributions: foxy
@@ -37,5 +38,5 @@ jobs:
           name: codecov-umbrella
       - uses: actions/upload-artifact@v1
         with:
-          name: colcon-logs-${{ matrix.os }}
+          name: colcon-logs
           path: ros_ws/log
