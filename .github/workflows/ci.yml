@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: ros-tooling/setup-ros@v0.1
         with:
           required-ros-distributions: foxy
@@ -36,9 +36,6 @@ jobs:
           file: ros_ws/lcov/total_coverage.info
           flags: unittests
           name: codecov-umbrella
-      - name: Debug
-        if: ${{ always() }}
-        uses: mxschmitt/action-tmate@v3
       - uses: actions/upload-artifact@v1
         with:
           name: colcon-logs
